@@ -81,8 +81,7 @@ public class InstalledAppResultTask extends SearchQueryTask.QueryWorker {
             }
             final CharSequence label = info.loadLabel(mPackageManager);
             final int wordDiff = SearchQueryUtils.getWordDifference(label.toString(), mQuery);
-            if (wordDiff == SearchQueryUtils.NAME_NO_MATCH &&
-                (info.privateFlags & ApplicationInfo.PRIVATE_FLAG_IS_RESOURCE_OVERLAY) != 0) {
+            if (wordDiff == SearchQueryUtils.NAME_NO_MATCH) {
                 continue;
             }
 
